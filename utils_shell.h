@@ -15,6 +15,7 @@
 
 
 void prompt(int argc, char **argv);
+int _strlen(const char *str);
 
 
 #endif
