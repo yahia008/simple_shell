@@ -14,5 +14,7 @@
 #include <sys/stat.h>
 
 
+void prompt(int argc, char **argv);
+
 
 #endif

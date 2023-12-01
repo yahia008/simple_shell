@@ -2,12 +2,15 @@
 
 /**
  * main - main c function
+ *@argc: keeps the number of comands
+ *@argv: is the input comand
  *
  * Return: return 0 always
  */
 
 
-int main()
+int main(int argc, char **argv)
 {
-	return(0);
+	prompt(argc, argv);
+	return (0);
 }
