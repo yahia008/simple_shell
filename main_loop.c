@@ -11,9 +11,30 @@
 
 void prompt(int argc, char **argv)
 {
-	char buff[] = "$ ";
+	char buff[] = "$ ", *input = NULL;
+	ssize_t readinput;
+	size_t n = 0;
+
 	(void)argc, (void)argv;
 
-	write(1, &buff, _strlen(buff));
+	while (1)
+	{
+		write(1, &buff, _strlen(buff));
+		readinput = getline(&input, &n, stdin);
 
+		if (readinput == -1)
+		{
+			perror("error");
+			free(input);
+			break;
+		}
+		if (strcmp(input, "exit\n") == 0)
+		{
+			free(input);
+			break;
+		}
+		free(input);
+
+	}
+	input = NULL;
 }
