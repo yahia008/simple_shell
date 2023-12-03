@@ -15,7 +15,7 @@ void prompt(int argc, char **argv)
 	ssize_t readinput;
 	size_t n = 0;
 
-	(void)argc, (void)argv;
+	(void)argc;
 
 	while (1)
 	{
@@ -33,8 +33,10 @@ void prompt(int argc, char **argv)
 			free(input);
 			break;
 		}
+		argv = split(input);
+		luncher(argv);
 		free(input);
 
 	}
-	input = NULL;
+	input = NULL, argv = NULL;
 }
