@@ -15,7 +15,7 @@ void prompt(int argc, char **argv)
 	ssize_t readinput;
 	size_t n = 0;
 
-	(void)argc;
+	(void)argc, (void)argv;
 
 	while (1)
 	{
@@ -33,10 +33,17 @@ void prompt(int argc, char **argv)
 			free(input);
 			break;
 		}
+		if (strcmp(input, "\n") == 0)
+		{
+			free(input);
+			continue;
+		}
+
 		argv = split(input);
 		luncher(argv);
 		free(input);
-
 	}
+
+
 	input = NULL, argv = NULL;
 }

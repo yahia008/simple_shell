@@ -12,7 +12,7 @@
 char **split(char *line)
 {
 	char *strip;
-	int buff = BUFSIZE, position;
+	int buff = BUFSIZE, position = 0;
 	char **tokens;
 
 	tokens = malloc(buff * sizeof(char *));
