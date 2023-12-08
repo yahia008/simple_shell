@@ -1,3 +1,5 @@
+#include "utils_shell.h"
+
 /**
  * _strlen - length of string
  * @str: parameter
@@ -14,4 +16,14 @@ int _strlen(const char *str)
 	}
 
 	return (len);
+}
+
+/**
+ * naija_print - Write a string to the standard output
+ * @str: the string to be written
+ */
+void naija_print(const char *str)
+{
+	size_t len = _strlen(str);
+	write(STDOUT_FILENO, str, len);
 }
