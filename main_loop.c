@@ -13,9 +13,9 @@ void prompt(int argc, char **argv)
 {
 	char buff[] = "$ ", *input = NULL;
 	ssize_t readinput;
-	size_t n = 0;
+	size_t n = 0, len;
 
-	(void)argc, (void)argv;
+	(void)argc;
 
 	while (1)
 	{
@@ -25,25 +25,32 @@ void prompt(int argc, char **argv)
 		if (readinput == -1)
 		{
 			perror("error");
-			free(input);
 			break;
 		}
 		if (strcmp(input, "exit\n") == 0)
 		{
-			free(input);
 			break;
 		}
 		if (strcmp(input, "\n") == 0)
 		{
-			free(input);
 			continue;
 		}
 
+		len = _strlen(input);
+		if (len > 0 && input[len - 1] == '\n')
+		{
+			input[len - 1] = '\0';
+		}
 		argv = split(input);
 		luncher(argv);
-		free(input);
+
 	}
 
+	if (input != NULL)
+	{
+		free(input);
+		input = NULL;
+	}
 
 	input = NULL, argv = NULL;
 }
