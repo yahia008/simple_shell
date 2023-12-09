@@ -41,6 +41,7 @@ void prompt(int argc, char **argv)
 		}
 		argv = split(input);
 		luncher(argv);
+		free_strips(argv);
 
 	}
 

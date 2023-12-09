@@ -41,7 +41,7 @@ char **split(char *line)
 			exit(1);
 		}
 
-		strcpy(tokens[position], strip);
+		strcop(tokens[position], strip);
 		tokens[position][TOKEN_SIZE] = '\0';
 		position++;
 

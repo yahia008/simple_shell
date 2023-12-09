@@ -18,5 +18,7 @@ void prompt(int argc, char **argv);
 int _strlen(const char *str);
 char **split(char *line);
 void  luncher(char **argv);
+void free_strips(char **token);
+char *strcop(char *dest, const char *src);
 
 #endif
