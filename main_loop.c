@@ -24,13 +24,11 @@ void prompt(int argc, char **argv)
 
 		if (readinput == -1)
 		{
-			perror("error");
+			free(input);
+			input = NULL;
 			break;
 		}
-		if (strcmp(input, "exit\n") == 0)
-		{
-			break;
-		}
+		
 		if (strcmp(input, "\n") == 0)
 		{
 			continue;
@@ -52,5 +50,5 @@ void prompt(int argc, char **argv)
 		input = NULL;
 	}
 
-	input = NULL, argv = NULL;
+	
 }
