@@ -29,7 +29,7 @@ void prompt(int argc, char **argv)
 			break;
 		}
 		
-		if (strcmp(input, "\n") == 0)
+		if (_srt(input, "\n") == 0)
 		{
 			continue;
 		}
