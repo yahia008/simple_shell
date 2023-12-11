@@ -8,6 +8,6 @@ A shell is a program that run other programs
 
 Thank you to the following contributors.
 
-- [Sodiq Agbaraojo](https://github.com/scodeq65)
+- [Sgdiq Agbaraojo](https://github.com/scodeq65)
 - [Tijjani Yahya](https://github.com/yahia008)
 - ...

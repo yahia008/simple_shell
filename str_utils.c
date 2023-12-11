@@ -37,5 +37,6 @@ void free_strips(char **token)
 	{
 		free(token[i]);
 	}
+
 	free(token);
 }
