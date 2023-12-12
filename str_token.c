@@ -9,6 +9,7 @@
 #define BUFSIZE 64
 #define TOK_DELIM " \t\r\n\a"
 #define TOKEN_SIZE 20
+
 char **split(char *line)
 {
 	char *strip;

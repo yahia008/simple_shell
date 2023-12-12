@@ -1,4 +1,4 @@
-#include "utils_shell.c"
+#include "utils_shell.h"
 
 /**
  * main - the entry point of the shell
@@ -8,7 +8,7 @@
  */
 int main(int argc, char **argv)
 {
-	if (argc !- 1)
+	if (argc != 1)
 	{
 		fprintf(stderr, "Usage: %s\n", argv[0]);
 		exit(1);

@@ -23,18 +23,18 @@ int _strn(char *s1, const char *s2, unsigned int n)
  */
 char *my_getenv(const char *path)
 {
-	char **env = environ;
-	unsigned int len;
+	extern char **environ;
+	int i;
 
 	i = _strlen(path);
 	
-	while (*env != NULL)
+	while (*environ != NULL)
 	{
-		if (_strn(*env, path, i) == 0 && (*env)[i] == '=')
+		if (_strn(*environ, path, i) == 0 && (*environ)[i] == '=')
 		{
-			return (*env + len + 1);	
+			return (*environ + i + 1);
 		}
-		env++;
+		environ++;
 	}
 	return(NULL);
 }
