@@ -25,17 +25,20 @@ int _strlen(const char *str)
 void naija_print(const char *str)
 {
 	size_t len = _strlen(str);
+
 	write(STDOUT_FILENO, str, len);
 }
 
 void free_strips(char **token)
 {
 	int i;
+
 	if (!token)
 		return;
 	for (i = 0; token[i] != NULL; i++)
 	{
 		free(token[i]);
 	}
+
 	free(token);
 }
