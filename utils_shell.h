@@ -22,5 +22,6 @@ void free_strips(char **token);
 char *strcop(char *dest, const char *src);
 int _srt( char *s1, const char *s2);
 char *concat(char *dest, const char *src);
+char *_strchr(const char *src, int c);
 
 #endif

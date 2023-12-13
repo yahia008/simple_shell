@@ -1,5 +1,4 @@
 #include "utils_shell.h"
-
 /**
  * prompt - it a void function
  * @argc: count number of command
@@ -7,16 +6,12 @@
  *
  * Return: nothing
  */
-
-
 void prompt(int argc, char **argv)
 {
 	char buff[] = "$ ", *input = NULL;
 	ssize_t readinput;
-	size_t n = 0, len;
-
+	size_t n = 0;
 	(void)argc;
-
 	while (1)
 	{
 		write(1, &buff, _strlen(buff));
@@ -28,28 +23,18 @@ void prompt(int argc, char **argv)
 			input = NULL;
 			break;
 		}
-		
 		if (_srt(input, "\n") == 0)
 		{
 			continue;
 		}
 
-		len = _strlen(input);
-		if (len > 0 && input[len - 1] == '\n')
-		{
-			input[len - 1] = '\0';
-		}
 		argv = split(input);
 		luncher(argv);
 		free_strips(argv);
-
 	}
-
 	if (input != NULL)
 	{
 		free(input);
 		input = NULL;
 	}
-
-	
 }
