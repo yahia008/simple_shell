@@ -28,7 +28,11 @@ void naija_print(const char *str)
 
 	write(STDOUT_FILENO, str, len);
 }
-
+/**
+ * free_strips - free all tokens
+ * @token: a double pointer
+ * Return: nothing
+ */
 void free_strips(char **token)
 {
 	int i;

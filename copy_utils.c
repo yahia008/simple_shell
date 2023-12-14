@@ -9,12 +9,13 @@
 char *strcop(char *dest, const char *src)
 {
 	char *ptr;
+
 	if (dest == NULL)
 	{
 		return (NULL);
 	}
 	ptr = dest;
-	while(*src != '\0')
+	while (*src != '\0')
 	{
 		*dest = *src;
 		dest++;
