@@ -4,7 +4,8 @@
  * BUFSIZE - Size of the buffer for reading input lines
  */
 #define BUFSIZE 64
-
+#define TOK_DELIM " \t\r\n\a"
+#define TOKEN_SIZE 20
 
 /**
  * split - tokenize a string
@@ -13,9 +14,6 @@
  * Return: returns a pointer to an array of strings
  */
 
-#define BUFSIZE 64
-#define TOK_DELIM " \t\r\n\a"
-#define TOKEN_SIZE 20
 
 char **split(char *line)
 {
