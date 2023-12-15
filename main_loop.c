@@ -8,13 +8,17 @@
  */
 void prompt(int argc, char **argv)
 {
+	int mod = isatty(0);
 	char buff[] = "$ ", *input = NULL;
 	ssize_t readinput;
 	size_t n = 0;
 	(void)argc;
 	while (1)
 	{
-		write(1, &buff, _strlen(buff));
+		if (mod == 1)
+		{
+			write(1, &buff, _strlen(buff));
+		}
 		readinput = getline(&input, &n, stdin);
 
 		if (readinput == -1)
